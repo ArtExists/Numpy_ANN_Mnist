@@ -14,7 +14,8 @@ net1=network()
 
 #
 cats=np.unique(trainy)
-ohe=(testy[:,None]==cats).astype(int)
+ohe=(trainy[:,None]==cats).astype(int)
 print(trainx.shape, trainy.shape,ohe.shape)
-testx=testx.reshape(-1,784)
-net1.train(1000,testx,ohe,0.002)
+trainx=trainx.reshape(-1,784)
+net1.train(1000,trainx,ohe,0.001)
+
